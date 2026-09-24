@@ -34,10 +34,41 @@ public class StringAnalyzer {
         // 6. Return the total vowel count
         return count;
     }
+    static int countconsonants(String text){
+        int count=0;
+        for (int i=0;i<text.length();i++){
+            char ch=Character.toLowerCase(text.charAt(i));
+            if(ch>='a' && ch<='z'){
+                if(ch!='a' && ch!='e' && ch!='i' && ch!='o'&&ch!='u'){
+                    count++;
+
+                }
+            }
+
+        }
+        return count;
+
+    }
+    static int countSpaces(String text) {
+
+        int count = 0;
+
+        for (int i = 0; i < text.length(); i++) {
+
+            if (text.charAt(i) == ' ') {
+
+                count++;
+            }
+        }
+
+        return count;
+    }
     public static void main(String[] args ){
         System.out.println("total characters in string: "+totalchars(text));
         System.out.println("total no.of words: "+totalwords(text));
         System.out.println("vowel count: "+countVowels(text));
+        System.out.println("consonants count: "+countconsonants(text));
+        System.out.println("countsapces: " +countSpaces(text));
 
     }
 
@@ -46,13 +77,56 @@ public class StringAnalyzer {
 
 //1. Total characters ✅
 //2. Number of words ✅
-//3. Number of vowels
-//4. Number of consonants
-//5. Number of spaces
+//3. Number of vowels ✅
+//4. Number of consonants ✅
+//5. Number of spaces ✅
 //6. Count occurrences of "Java"
 //Expected:
 //
 //Java appears: 2 times
-//7. Convert the sentence to uppercase
+//7. Reverse every word
+
+// Count occurrence of a word
+//static int countWord(
+//        String text,
+//        String word) {
+//
+//    String[] words =
+//            text.split("\\s+");
+//
+//    int count = 0;
+//
+//    for (String currentWord : words) {
+//
+//        if (currentWord.equalsIgnoreCase(word)) {
+//
+//            count++;
+//        }
+//    }
+//
+//    return count;
+//}
+//// Reverse every word
+//static String reverseEachWord(String text) {
+//
+//    String[] words =
+//            text.split("\\s+");
+//
+//    StringBuilder result =
+//            new StringBuilder();
+//
+//    for (String word : words) {
+//
+//        StringBuilder reversed =
+//                new StringBuilder(word);
+//
+//        reversed.reverse();
+//
+//        result.append(reversed);
+//        result.append(" ");
+//    }
+//
+//    return result.toString().trim();
+//}
 
 
