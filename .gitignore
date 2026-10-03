@@ -1,0 +1,105 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+# ==============================
+# Maven
+# ==============================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+
+# ==============================
+# IntelliJ IDEA
+# ==============================
+.idea/
+*.iml
+*.iws
+*.ipr
+
+
+# ==============================
+# Eclipse
+# ==============================
+.classpath
+.project
+.settings/
+
+
+# ==============================
+# VS Code
+# ==============================
+.vscode/
+
+
+# ==============================
+# Java
+# ==============================
+*.class
+
+
+# ==============================
+# Logs
+# ==============================
+*.log
+logs/
+
+
+# ==============================
+# OS generated files
+# ==============================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+
+# ==============================
+# Environment & Secrets
+# ==============================
+.env
+.env.*
+application-local.properties
+
+
+# ==============================
+# Spring Boot
+# ==============================
+*.pid
+*.pid.lock
+
+
+# ==============================
+# Temporary files
+# ==============================
+*.tmp
+*.temp
+*.swp
