@@ -7,7 +7,8 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 @RestController
@@ -22,25 +23,30 @@ public class BookController {
     }
 
     // GET ALL
+//    @GetMapping
+//    public ResponseEntity<List<BookResponse>> getAllBooks() {
+//
+//        return ResponseEntity.ok(
+//                bookService.getAllBooks()
+//        );
+//    }
     @GetMapping
-    public ResponseEntity<List<BookResponse>> getAllBooks() {
+    public Page<BookResponse> getBooks(
+            Pageable pageable) {
 
-        return ResponseEntity.ok(
-                bookService.getAllBooks()
-        );
+        return bookService.getBooks(pageable);
     }
 
     // GET BY ID
-    @GetMapping("/{id}")
-    public ResponseEntity<BookResponse> getBookById(
-            @PathVariable Long id) {
+//    @GetMapping("/{id}")
+//    public ResponseEntity<BookResponse> getBookById(
+//            @PathVariable Long id) {
+//
+//        return ResponseEntity.ok(
+//                bookService.getBookById(id)
+//        );
+//    }
 
-        return bookService.getBookById(id)
-                .map(ResponseEntity::ok)
-                .orElseGet(
-                        () -> ResponseEntity.notFound().build()
-                );
-    }
 
     // CREATE
     @PostMapping
@@ -60,9 +66,8 @@ public class BookController {
     public ResponseEntity<Void> deleteBook(
             @PathVariable Long id) {
 
-        if (bookService.getBookById(id).isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
+        // Throws ResourceNotFoundException (-> 404) if the book doesn't exist
+        bookService.getBookById(id);
 
         bookService.deleteBook(id);
 
